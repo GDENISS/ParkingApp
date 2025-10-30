@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="Application Zorem - partage de places de parking" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Zorem</title>
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- 🗺️ Script Google Maps avec ta clé et la librairie Places -->
+    <script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjtwvpAXxqLEaSVFkxZGtEKQp1K6aEQII&libraries=places">
+    </script>
+
+    <!-- Flutter Web Loader -->
+    <script>
+      var serviceWorkerVersion = null;
+    </script>
+    <script src="flutter.js" defer></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+      }
+      #flutter_target {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="flutter_target"></div>
+    <script>
+      window.addEventListener('load', function(ev) {
+        _flutter.loader.loadEntrypoint({
+          serviceWorker: {
+            serviceWorkerVersion: serviceWorkerVersion,
+          },
+          onEntrypointLoaded: function(engineInitializer) {
+            engineInitializer.initializeEngine().then(function(appRunner) {
+              appRunner.runApp();
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
