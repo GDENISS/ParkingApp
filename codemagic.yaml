@@ -11,8 +11,3 @@ workflows:
         - pod install --repo-update
     artifacts:
       - build/ios/ipa/*.ipa
-    publishing:
-      testflight:
-        enabled: true
-        apple_id: "dguidalia@gmail.com"
-        app_identifier: "com.Danou2000.trouve_ton_parking"
