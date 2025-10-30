@@ -1,0 +1,18 @@
+workflows:
+  ios-workflow:
+    name: iOS Workflow
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+    scripts:
+      before_build:
+        - cd ios
+        - pod install --repo-update
+    artifacts:
+      - build/ios/ipa/*.ipa
+    publishing:
+      testflight:
+        enabled: true
+        apple_id: "dguidalia@gmail.com"
+        app_identifier: "com.Danou2000.trouve_ton_parking"
