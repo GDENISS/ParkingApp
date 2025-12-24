@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "779689342841",
+    "project_id": "zorem-24532",
+    "storage_bucket": "zorem-24532.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779689342841:android:0ca8a3c33c6196872e21a8",
+        "android_client_info": {
+          "package_name": "com.example.trouve_ton_parking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzJ9qFChz8eKBR01hfR9m2MCxKXeDwLWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

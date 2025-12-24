@@ -4,6 +4,7 @@
 <plist version="1.0">
 <dict>
 
+    <!-- Informations de base -->
     <key>CFBundleDisplayName</key>
     <string>Zorem</string>
 
@@ -27,6 +28,11 @@
         <string>armv7</string>
     </array>
 
+    <key>UIDeviceFamily</key>
+    <array>
+        <integer>1</integer>
+    </array>
+
     <key>UISupportedInterfaceOrientations</key>
     <array>
         <string>UIInterfaceOrientationPortrait</string>
@@ -34,20 +40,27 @@
         <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
 
-    <!-- Permissions de localisation -->
+    <!-- Autorisations de localisation -->
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>L’application utilise votre position pour localiser les places de stationnement à proximité.</string>
+
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
     <string>Votre position est utilisée pour afficher les places disponibles autour de vous.</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Votre position est utilisée pour calculer la distance des places disponibles.</string>
 
-    <!-- Internet -->
+    <!-- Accès Internet -->
     <key>NSAppTransportSecurity</key>
     <dict>
         <key>NSAllowsArbitraryLoads</key>
         <true/>
     </dict>
+
+    <!-- Firebase -->
+    <key>FirebaseAppDelegateProxyEnabled</key>
+    <true/>
+    
+    <!-- Mapbox Token -->
+    <key>MBXAccessToken</key>
+    <string>pk.eyJ1IjoiZGdtYXN0ZXJwaWVjZSIsImEiOiJjbTQzbGVoYW4wZWJhMmtzN3h6cDl6Y2N6In0.GNWxZgSeh_Yjym_K0Rpgtg</string>
 
 </dict>
 </plist>

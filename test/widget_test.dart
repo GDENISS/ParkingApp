@@ -1,28 +1,73 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:zorem/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('SplashScreen displays logo and animates', (WidgetTester tester) async {
+    await tester.pumpWidget(const MaterialApp(home: SplashScreen()));
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verify logo is displayed
+    expect(find.byType(Image), findsOneWidget);
+    
+    // Verify app name is displayed
+    expect(find.text('ZOREM'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    // Wait for animation
+    await tester.pump(const Duration(seconds: 1));
+    
+    // Verify animation completes
+    await tester.pump(const Duration(seconds: 2));
+  });
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  testWidgets('LoginPage displays all input fields', (WidgetTester tester) async {
+    await tester.pumpWidget(const MaterialApp(home: LoginPage()));
+
+    // Verify all text fields are present
+    expect(find.byType(TextField), findsNWidgets(4));
+    
+    // Verify labels
+    expect(find.text('Username'), findsOneWidget);
+    expect(find.text('Password'), findsOneWidget);
+    expect(find.text('Car Model'), findsOneWidget);
+    expect(find.text('License Plate'), findsOneWidget);
+    
+    // Verify confirm button
+    expect(find.text('Confirm'), findsOneWidget);
+  });
+
+  testWidgets('RoundLabelButton displays icon and label', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: RoundLabelButton(
+            icon: Icons.add,
+            label: 'Test',
+            onPressed: () {},
+          ),
+        ),
+      ),
+    );
+
+    // Verify icon is displayed
+    expect(find.byIcon(Icons.add), findsOneWidget);
+    
+    // Verify label is displayed
+    expect(find.text('Test'), findsOneWidget);
+  });
+
+  testWidgets('ElapsedTimeWidget displays formatted time', (WidgetTester tester) async {
+    final testTime = DateTime.now().subtract(const Duration(minutes: 5, seconds: 30));
+    
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: ElapsedTimeWidget(createdAt: testTime),
+        ),
+      ),
+    );
+
+    // Verify time is displayed
+    expect(find.textContaining('Released'), findsOneWidget);
+    expect(find.textContaining(':'), findsOneWidget);
   });
 }

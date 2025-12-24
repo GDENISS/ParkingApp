@@ -1,5 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.zorem">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -11,8 +10,16 @@
         android:icon="@mipmap/ic_launcher">
         
         <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+        
+        <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD46yrWRfWXJ1aIltAGGDzgnH_Z6Zlx3M0" />
+        
+        <meta-data
+            android:name="com.mapbox.token"
+            android:value="pk.eyJ1IjoiZGdtYXN0ZXJwaWVjZSIsImEiOiJjbTQzbGVoYW4wZWJhMmtzN3h6cDl6Y2N6In0.GNWxZgSeh_Yjym_K0Rpgtg" />
 
         <activity
             android:name=".MainActivity"

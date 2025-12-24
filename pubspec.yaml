@@ -1,28 +1,51 @@
 name: zorem
-description: Application de partage de places de parking Zorem
+description: Zorem parking sharing app
+
 publish_to: 'none'
+
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
+
+  # --- MAP & GEO ---
   flutter_map: ^6.1.0
   latlong2: ^0.9.1
-  geolocator: ^10.1.0
-  geocoding: ^3.0.0
+  geolocator: ^10.0.0
+
+  # --- LOCAL STORAGE ---
   shared_preferences: ^2.2.2
-  cupertino_icons: ^1.0.6
+
+  # --- LINKS ---
+  url_launcher: ^6.1.10
+
+  # --- NOTIFICATIONS LOCALES ---
+  flutter_local_notifications: ^17.1.0
+
+  # --- FIREBASE ---
+  firebase_core: ^2.25.0
+  cloud_firestore: ^4.14.0
+
+  # --- HTTP (nécessaire pour afficher la carte OSM) ---
+  http: ^1.2.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.1
+  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
 
   assets:
+    - assets/icons/my_location_icon.png
+    - assets/icons/p_blue.png
+    - assets/icons/p_pink.png
+    - assets/default_profile.png
+    - assets/driver_green.png
     - assets/logo_zorem.png
+    - assets/release_button.png
